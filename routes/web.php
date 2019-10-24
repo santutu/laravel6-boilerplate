@@ -13,7 +13,7 @@
 */
 
 //verify email. see https://laravel.com/docs/6.x/verification, https://laravel.com/docs/6.x/mail
-//Auth::routes(['verify' => true]);
+Auth::routes(['verify' => true]);
 //Route::get('/profile', 'ProfileController@show')->middleware('verified');
 
 Route::get('/', function () {

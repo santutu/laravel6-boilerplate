@@ -65,4 +65,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function generateApiToken(): string
+    {
+        do {
+            $uuid = \Str::uuid()->toString();
+        } while (static::where('api_token', $uuid)->exists());
+        return $uuid;
+    }
 }

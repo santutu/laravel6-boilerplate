@@ -4,6 +4,13 @@ use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
+$log_channel = env('LOG_CHANNEL', 'stack');
+
+$channels = ['daily'];
+if (env('LOG_SLACK_WEBHOOK_URL')) {
+    array_push($channels, 'slack');
+}
+
 return [
 
     /*
@@ -17,7 +24,7 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'stack'),
+    'default' => $log_channel,
 
     /*
     |--------------------------------------------------------------------------
@@ -59,7 +66,7 @@ return [
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
             'username' => 'Laravel Log',
             'emoji' => ':boom:',
-            'level' => 'critical',
+            'level' => 'warning',
         ],
 
         'papertrail' => [

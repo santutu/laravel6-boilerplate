@@ -11,7 +11,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {}
+} catch (e) {
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -39,3 +40,33 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+
+//echo start
+
+import Echo from 'laravel-echo'
+
+window.io = require('socket.io-client');
+
+window.Echo = new Echo({
+    broadcaster: 'socket.io',
+    host: window.location.hostname + ':6001',
+    auth: {
+        headers: {
+            //todo
+            Authorization: 'Bearer ' + '7a78bf3d-621c-4a53-b71c-ef251342ce47',
+        },
+    },
+});
+
+
+window.Echo.join('TestPresenceChannel')
+    .here((users) => {
+        console.log(users);
+    })
+    .listen('TestPresenceChannelEvent', (e) => {
+        console.log(e);
+    });
+
+
+//echo end
