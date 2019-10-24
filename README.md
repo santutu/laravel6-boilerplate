@@ -68,3 +68,15 @@ composer usage on windows (Horizon require PHP extension pcntl, but window can't
 composer require {package} --ignore-platform-reqs
 
 ```
+
+Change .env
+```bash
+php artisan env:copy docker
+php artisan env:copy local
+php artisan env:copy prod
+```
+
+
+todo 
+echoserver
+authunticate

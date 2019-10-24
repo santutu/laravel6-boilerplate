@@ -11,6 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $admin= \App\Models\User::where('name','admin')->first();
+        if(!$admin){
+            $user = factory(\App\Models\User::class)->create([
+                'name' => 'admin',
+                'email' => 'admin@email.com',
+                'password'=>Hash::make('admin')
+            ]);
+            $user->save();
+        }
+
         // $this->call(UsersTableSeeder::class);
     }
 }

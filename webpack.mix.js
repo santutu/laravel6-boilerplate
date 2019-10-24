@@ -1,6 +1,5 @@
 const mix = require('laravel-mix');
-// const config= require('dotenv').config();
-
+require('dotenv').config();
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -16,9 +15,10 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 
 
-// mix.browserSync({
-//     proxy: 'http://localhost'
-// });
+mix.browserSync({
+
+    proxy: process.env.APP_URL
+});
 
 if (mix.inProduction()) {
     mix.version();

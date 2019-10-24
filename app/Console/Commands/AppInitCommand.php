@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use Santutu\LaravelDotEnv\DotEnv;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-class InitAppCommand extends Command
+class AppInitCommand extends Command
 {
     /**
      * The name and signature of the console command.
