@@ -67,6 +67,7 @@ return [
     |
     */
 
+//    'timezone' => 'Asia/Seoul',
     'timezone' => 'UTC',
 
     /*
@@ -80,6 +81,7 @@ return [
     |
     */
 
+//    'locale' => 'ko',
     'locale' => 'en',
 
     /*
@@ -175,6 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\AnnotationsServiceProvider::class
 
     ],
 

@@ -30,6 +30,10 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
+ * @property string|null $api_token
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\LinkedSocialAccount[] $socialAccounts
+ * @property-read int|null $social_accounts_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereApiToken($value)
  */
 class User extends Authenticatable
 {
@@ -71,5 +75,10 @@ class User extends Authenticatable
             $uuid = \Str::uuid()->toString();
         } while (static::where('api_token', $uuid)->exists());
         return $uuid;
+    }
+
+    public function socialAccounts()
+    {
+        return $this->hasMany(LinkedSocialAccount::class, 'user_id', 'id');
     }
 }

@@ -26,8 +26,8 @@ Route::prefix('login')->group(function () {
 //todo allow providerName data
 });
 
-Route::get('/test', 'TestController@test');
-Route::get('/test2', 'TestController@test2');
+//Route::get('/test', 'TestController@test');
+//Route::get('/test2', 'TestController@test2');
 
 
 Route::get('/home', 'HomeController@index')->name('home');

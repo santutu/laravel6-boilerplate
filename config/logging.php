@@ -44,7 +44,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => $channels,
             'ignore_exceptions' => false,
         ],
 

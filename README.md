@@ -10,7 +10,7 @@ With laradock.
 
 ```bash
 git clone https://github.com/santutu/laravel6-boilerplate.git
-composer install --ignore-platform-reqs
+composer install // if got "require PHP extension pcntl" error, try "composer install --ignore-platform-reqs"
 npm install
 php artisan app:init
 npm run watch
@@ -40,19 +40,22 @@ docker-compose exec workspace bash // if want to connect docker container bash
 ```bash
 php artisan generate:model-factory //https://github.com/mpociot/laravel-test-factory-helper
 php artisan api:doc //https://github.com/mpociot/laravel-apidoc-generator
-php artisan env:copy {.env file name} // ex)docker or local or prod. https://github.com/santutu/laravel-dotenv
+php artisan env:copy {.env file name} // ex- docker or local or prod. https://github.com/santutu/laravel-dotenv
 ```
 
 ## Useful installed packages and etc.
-
+- https://github.com/spatie/laravel-permission
 - https://github.com/glorand/laravel-model-settings
 - https://github.com/illuminatech/validation-composite
 - https://github.com/Askedio/laravel-soft-cascade
 - https://github.com/webmozart/path-util
 - http://localhost:{your-port}/horizon
 - http://localhost:{your-port}/telescope
-
-
+- https://github.com/thepinecode/blade-filters
+- https://github.com/LaravelCollective/annotations
+- https://github.com/creativeorange/gravatar
+- https://cartalyst.com/manual/tags/9.x#introduction
+- https://github.com/Torann/laravel-geoip // require redis cache 
 ## Useful not installed packages
  
 - https://github.com/proengsoft/laravel-jsvalidation
@@ -66,12 +69,15 @@ php artisan env:copy {.env file name} // ex)docker or local or prod. https://git
 - https://github.com/Intervention/image
 - https://github.com/jenssegers/laravel-mongodb
 - https://github.com/spatie/laravel-medialibrary
-- https://github.com/googleapis/google-api-php-client
 - https://nova.laravel.com/
 - https://github.com/numaxlab/nova-ckeditor5-classic/releases
 - https://github.com/beyondcode/nova-tinker-tool
 - https://github.com/ebess/advanced-nova-media-library
 - https://github.com/beyondcode/laravel-er-diagram-generator
+- https://github.com/Astrotomic/laravel-translatable
+- https://github.com/mcamara/laravel-localization
+- https://github.com/barryvdh/laravel-translation-manager
+
 
 ## composer usage on windows (Horizon require PHP extension pcntl, but window can't install it.)
 
@@ -104,6 +110,38 @@ composer require {package} --ignore-platform-reqs
 
 -[ ] describe about configging log_slack_webhook_url.
 
+-[ ] https
+
+-[ ] soft delete with changing column
+
+-[ ] deployment method.
+
+-[x] tagging
+
+-[ ] chat boilerplate?
+
+-[ ] https://github.com/langleyfoxall/laravel-nist-password-rules
+
+-[ ] ban user for pried
+
+//
+
+kirschbaum-development/laravel-translations-loader
+
+andywer/laravel-js-localization
+
+rmariuzzo/Laravel-JS-Localization
+
+### Commands before deploying
+```bash
+composer install --optimize-autoloader --no-dev
+php artisan cache:clear
+php artisan config:cache
+php artisan event:scan
+php artisan route:scan
+php artisan model:scan
+php artisan route:cache
+``` 
 
 ## License
 

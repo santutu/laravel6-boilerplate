@@ -31,6 +31,9 @@ class Kernel extends ConsoleKernel
         //config/quicksand
         $schedule->command('quicksand:run')
             ->daily();
+
+        //https://laravel.com/docs/6.x/horizon
+        $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
 
     /**

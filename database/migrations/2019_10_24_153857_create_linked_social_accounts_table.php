@@ -19,8 +19,8 @@ class CreateLinkedSocialAccountsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on(\App\Models\User::table)->onDelete('cascade');
 
-            $table->string('provider_id');
             $table->string('provider_name');
+            $table->string('provider_id');
 
             $table->string('avatar')->nullable();
             $table->string('refresh_token')->nullable();
@@ -28,6 +28,9 @@ class CreateLinkedSocialAccountsTable extends Migration
             $table->timestamp("expired_at")->nullable();
 
             $table->timestamps();
+
+            $table->index(['provider_name', 'provider_id']);
+
         });
     }
 

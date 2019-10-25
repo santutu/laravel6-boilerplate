@@ -3,20 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Creativeorange\Gravatar\Facades\Gravatar;
+use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function test()
+    /**
+     * @Get("/test")
+     */
+    public function test(Request $req)
     {
-        dump(\DotEnv::getDotEnvFilePath());
-        dump(\DotEnv::get('APP_NAME'));
-        dump(app()->environmentFilePath());
-        dump(env('APP_NAME'));
         return response("this is test", 200);
     }
 
     public function test2()
     {
         return response()->json(User::first());
+    }
+
+    /**
+     * @Get("/throw")
+     */
+    public function throw()
+    {
+        throw new \Exception('this is test exception.');
     }
 }

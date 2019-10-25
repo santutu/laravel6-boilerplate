@@ -1,0 +1,2 @@
+env('DEBUG')
+env('APP_ENV')
