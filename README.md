@@ -6,17 +6,17 @@ laravel6-boilerplate
 Getting started laravel6 with full configuration for production and development.
 With laradock. 
 
-### Installation and Running
+## Installation and Running
 
-```php
+```bash
 git clone https://github.com/santutu/laravel6-boilerplate.git
 composer install --ignore-platform-reqs
 npm install
 php artisan app:init
 npm run watch
 ```
-__Running laravel-echo-server on local__
-```php
+__Running laravel-echo-server in local__
+```bash
 npm install -g laravel-echo-server
 laravel-echo-server start
 ```
@@ -35,15 +35,15 @@ npm run watch // on project root dir
 docker-compose exec workspace bash // if want to connect docker container bash
 ```
 
-### Useful commands
+## Useful commands
 
-```php
+```bash
 php artisan generate:model-factory //https://github.com/mpociot/laravel-test-factory-helper
 php artisan api:doc //https://github.com/mpociot/laravel-apidoc-generator
 php artisan env:copy {.env file name} // ex)docker or local or prod. https://github.com/santutu/laravel-dotenv
 ```
 
-### Useful installed packages and etc.
+## Useful installed packages and etc.
 
 - https://github.com/glorand/laravel-model-settings
 - https://github.com/illuminatech/validation-composite
@@ -55,41 +55,53 @@ php artisan env:copy {.env file name} // ex)docker or local or prod. https://git
 
 ## Useful not installed packages
  
-- proengsoft/laravel-jsvalidation
-- staudenmeir/eloquent-has-many-deep
-- spatie/once
-- spatie/async
-- imangazaliev/didom
-- hyungju/laravel-sens
-- guzzlehttp/guzzle
-- awobaz/compoships
-- intervention/image
-- jenssegers/mongodb
-- spatie/laravel-medialibrary
-- google/apiclient
-- nova
-- laravel/nova
-- numaxlab/nova-ckeditor5-classic
-- beyondcode/nova-tinker-tool
-- ebess/advanced-nova-media-library
+- https://github.com/proengsoft/laravel-jsvalidation
+- https://github.com/staudenmeir/eloquent-has-many-deep
+- https://github.com/spatie/once
+- https://github.com/spatie/async
+- https://github.com/Imangazaliev/DiDOM
+- https://github.com/HyungJu/laravel-sens
+- https://github.com/guzzle/guzzle
+- https://github.com/topclaudy/compoships
+- https://github.com/Intervention/image
+- https://github.com/jenssegers/laravel-mongodb
+- https://github.com/spatie/laravel-medialibrary
+- https://github.com/googleapis/google-api-php-client
+- https://nova.laravel.com/
+- https://github.com/numaxlab/nova-ckeditor5-classic/releases
+- https://github.com/beyondcode/nova-tinker-tool
+- https://github.com/ebess/advanced-nova-media-library
+- https://github.com/beyondcode/laravel-er-diagram-generator
 
-
-
-
-#### composer usage on windows (Horizon require PHP extension pcntl, but window can't install it.)
+## composer usage on windows (Horizon require PHP extension pcntl, but window can't install it.)
 
 ```bash
 composer require {package} --ignore-platform-reqs
 ```
 
 
-
-
-### TDL
+## TDL
 
 -[x] laravel echo server
+
 -[ ] lang copy artisan console. vendor/caouecs/laravel-lang https://github.com/caouecs/Laravel-lang
+
 -[ ] laravel/passport
+
+-[ ] api with jwt token(laravel guard)
+
+-[ ] laravel/cashier
+
+-[ ] elasticsearch
+
+-[ ] envoy for queue, cron, laravel-echo-server
+
+-[ ] easy testing package.
+
+-[ ] Board Package
+
+-[ ] Infinity scroll package on backend
+
 -[ ] describe about configging log_slack_webhook_url.
 
 
