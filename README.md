@@ -55,7 +55,12 @@ php artisan env:copy {.env file name} // ex- docker or local or prod. https://gi
 - https://github.com/LaravelCollective/annotations
 - https://github.com/creativeorange/gravatar
 - https://cartalyst.com/manual/tags/9.x#introduction
-- https://github.com/Torann/laravel-geoip // require redis cache 
+- https://github.com/Torann/laravel-geoip // require redis cache
+- https://github.com/laravelista/comments
+- https://github.com/vkovic/laravel-custom-casts
+- https://symfony.com/doc/current/components/serializer.html
+- https://github.com/glorand/laravel-model-settings 
+- https://github.com/qcod/laravel-app-settings, http://localhost:{your-port}/settings
 ## Useful not installed packages
  
 - https://github.com/proengsoft/laravel-jsvalidation

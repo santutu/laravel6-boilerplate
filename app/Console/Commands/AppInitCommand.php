@@ -148,7 +148,6 @@ class AppInitCommand extends Command
         $this->setEnv($tempDotEnv, 'APP_DEBUG', true);
         $this->setEnv($tempDotEnv, 'APP_KEY', $this->generateRandomKey());
         $this->setEnv($tempDotEnv, 'DB_DATABASE', $mysqlDatabaseName);
-        $this->setEnv($tempDotEnv, 'TELESCOPE_ENABLED', true);
         $this->setEnv($tempDotEnv, 'REDIS_CLIENT', 'predis');
         $this->setEnv($tempDotEnv, 'REDIS_PREFIX', '');
 

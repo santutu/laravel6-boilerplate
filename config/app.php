@@ -177,7 +177,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\AnnotationsServiceProvider::class
+        App\Providers\AnnotationsServiceProvider::class,
+        \App\Providers\SerializerServiceProvider::class,
+        \App\Providers\HelperServiceProvider::class,
+        \App\Providers\MacroServiceProvider::class,
 
     ],
 
@@ -229,6 +232,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Serializer' => \App\Facades\SerializerFacade::class,
 
     ],
 
