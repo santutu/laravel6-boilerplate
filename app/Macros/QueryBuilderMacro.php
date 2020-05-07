@@ -6,7 +6,7 @@ namespace App\Macros;
 
 use Illuminate\Database\Query\Builder;
 
-class FluentQueryBuilderMacro implements IMacroRegistable
+class QueryBuilderMacro implements IMacroRegistable
 {
 
     public function regist()

@@ -6,7 +6,7 @@ namespace App\Macros;
 
 use Illuminate\Database\Eloquent\Builder;
 
-class GeneratorEloquentBuilderMacro implements IMacroRegistable
+class EloquentBuilderMacro implements IMacroRegistable
 {
 
     public function regist()
@@ -52,7 +52,7 @@ class GeneratorEloquentBuilderMacro implements IMacroRegistable
             }
         });
 
-        Builder::macro('updateWithAllGenerator', function (array $update, callable $cb) {
+        Builder::macro('chunkUpdateAll', function (array $update, callable $cb) {
             /**
              * @var $model Builder
              */

@@ -2,11 +2,10 @@
 
 namespace App\Providers;
 
-use App\Macros\ArrayBundlesCollectionMacro;
-use App\Macros\FluentQueryBuilderMacro;
-use App\Macros\GeneratorEloquentBuilderMacro;
+use App\Macros\CollectionMacro;
+use App\Macros\QueryBuilderMacro;
+use App\Macros\EloquentBuilderMacro;
 use App\Macros\IMacroRegistable;
-use App\Macros\PaginateCollectionMacro;
 use Illuminate\Support\ServiceProvider;
 
 class MacroServiceProvider extends ServiceProvider
@@ -16,10 +15,9 @@ class MacroServiceProvider extends ServiceProvider
      * @var IMacroRegistable[]
      */
     protected $macroRegistClasses = [
-        ArrayBundlesCollectionMacro::class,
-        FluentQueryBuilderMacro::class,
-        GeneratorEloquentBuilderMacro::class,
-        PaginateCollectionMacro::class,
+        CollectionMacro::class,
+        QueryBuilderMacro::class,
+        EloquentBuilderMacro::class,
     ];
 
     /**
